@@ -1,0 +1,295 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#section_01 {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+}
+
+#bg_main_img_01 {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+}
+
+#nmax_banner_principal {
+  height: 55%;
+  width: 45%;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#header_section_01 {
+  /* background-color: blue; */
+  width: 100%;
+  margin-bottom: auto;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+}
+#header_section_01_logos_01 {
+  /* background-color: red; */
+  width: 50%;
+  height: 100%;
+  display: flex;
+  margin-left: 50px;
+  align-items: center;
+}
+
+#header_section_01_logos_01 img {
+  width: 12rem;
+  height: 3.2rem;
+  margin: 0 1rem 0 0;
+}
+
+#header_section_01_logos_02 {
+  width: 50%;
+  height: 100%;
+  /* background-color: aquamarine */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#header_section_01_logos_02 img {
+  width: 8rem;
+  height: 6rem;
+  margin: 1rem 5rem 0 1rem;
+}
+
+#container_section_01 {
+  width: 100%;
+  /*   background-color: blue; */
+  height: 50%;
+}
+
+#container_section_01 #title_one {
+  font-family: "Play", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-left: 50px;
+  /* background-color: red; */
+}
+#container_section_01 #title_two {
+  /* background-color: green; */
+  font-family: "Play", sans-serif;
+  line-height: 0.9;
+  font-size: 200px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: transparent; /* Sin relleno */
+  -webkit-text-stroke: 1.5px white; /* Contorno negro */
+  margin-left: 50px;
+  margin-top: 0;
+}
+#container_section_01 #title_three {
+  /* background-color: yellow; */
+  font-family: "Play", sans-serif;
+  font-size: 180px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-align: end;
+  margin-right: 50px;
+}
+
+#aside_section_03_logos_01 {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  position: absolute;
+  top: 55%;
+}
+#aside_section_03_logos_01 img {
+  width: 70px;
+  height: 70px;
+  margin: 10px 0 10px 0;
+}
+
+#actions_section_04 {
+  height: 30%;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#actions_section_04 button {
+  background-color: transparent;
+  font-family: "Play", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background-image: linear-gradient(285grad, #000000 0%, #ff0000 100%);
+  border-radius: 100px;
+  padding: 20px 40px 20px 40px;
+  color: #ffffff;
+  margin-top: 50px;
+
+}
+
+#actions_section_04 button:hover {
+  --e-transform-scale: 1.1
+}
+
+#section_02 {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+}
+
+#bg_main_img_02 {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+}
+
+#header_section_02 {
+    height: 10%;
+}
+
+#group_text_movimiento_section_02 {
+  display: flex;
+  animation: moverIzquierda 2s linear infinite;
+}
+
+#group_text_section_02 {
+  flex-shrink: 0;
+  display: flex;
+  white-space: nowrap;
+  font-family: "Play", sans-serif;
+  font-size: 70px;
+  color: #ffffff;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+.group_text_01 {
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  font-weight: bold;
+}
+
+@keyframes moverIzquierda {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+
+#container_section_02 {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    height: 30%;
+} 
+
+#container_section_02 span {
+    margin: 10px 0;
+    text-align: center;
+    font-family: "Play", sans-serif;
+    color: #ffffff;
+}
+
+#container_section_02 > *:nth-child(1) {
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 0.5px;   
+    width: 60%;
+}
+#container_section_02 > *:nth-child(2) {
+    font-weight: 400;
+    width: 45%;
+    font-size: 18px;
+}
+#container_section_02 > *:nth-child(3) {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+#form_ia_section_02 {
+    height: 60%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#form_ia_section_02 form {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    padding: 2rem;
+    border: solid 1px #ffffff3b;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease-out;
+    background: linear-gradient(27deg, rgba(31, 95, 255, 0.114) 1%, rgba(255, 255, 255, 0.121) 100%);
+    backdrop-filter: blur(10px);
+
+    label {
+        font-family: 'Play', sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        color: #ffffff;
+        margin-bottom: 0;
+        line-height: 1.2rem;
+    }
+    select {
+        font-family: 'Play', sans-serif;
+        font-size: .9rem;
+        border-radius: 10px;
+        transition: border 0.3s ease, box-shadow 0.3s ease;
+        background-color: #2A2F3B;
+        border: none;
+        padding: 12px;
+        color: #ffffff;
+    }
+
+    button {
+        font-family: 'Play', sans-serif;
+        font-weight: bold;
+        color: #ffffff;
+        font-size: .8rem;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 1em 2.5em;
+        text-transform: uppercase;
+        background: linear-gradient(27deg, #FF0000 1%, #000000 100%);
+        letter-spacing: 1px;
+    }
+    button:hover {
+        background-color: #b71c1c;
+        transform: translateY(-2px);
+    }
+}
+
+#img_ia_section_02 {
+    background: #d8d8d8;
+    width: 68%;
+    background-image: url(https://uhuragroup.com/wp-content/uploads/2025/05/Imagen-base-nmax1-scaled.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 65%;
+    margin-left: 40px;
+}
