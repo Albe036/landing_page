@@ -591,6 +591,8 @@ body {
 #container_moto_box_section_05 {
   width: 80%;
   height: 550px;
+  width: 80%;
+  height: 550px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -599,6 +601,8 @@ body {
 }
 
 .card {
+  width: 330px;
+  height: 500px;
   width: 330px;
   height: 500px;
   margin: 0 10px;
