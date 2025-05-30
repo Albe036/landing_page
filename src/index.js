@@ -10,6 +10,13 @@ function toggleTooltip(event, id = undefined) {
   document.getElementById(id_selected).style.display = "block";
 }
 
+document.addEventListener("scroll", function () {
+  const list_ids = [1, 2, 3, 4, 5, 6, 7];
+  for (let e of list_ids) {
+    document.getElementById(`tooltip${e}`).style.display = "none";
+  }
+});
+
 const texto = "descúbrela aquí";
 const target = document.getElementById("type-target");
 
@@ -27,3 +34,19 @@ function escribir(i = 0) {
 }
 
 escribir();
+
+
+const container = document.getElementById('container_match_section_06');
+  const divider = document.getElementById('divider');
+  const rightImg = container.querySelector('.right-img');
+
+  container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+
+    const clampedX = Math.max(0, Math.min(offsetX, rect.width));
+
+    divider.style.left = clampedX + 'px';
+    const percent = (clampedX / rect.width) * 100;
+    rightImg.style.clipPath = `inset(0 0 0 ${percent}%)`;
+  });

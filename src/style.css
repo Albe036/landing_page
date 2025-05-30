@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0px;
   padding: 0px;
@@ -10,6 +14,7 @@ body {
   margin: 0px;
   padding: 0px;
   height: 100vh;
+  background-image: url(https://scooter.incolmotos-yamaha.com.co/wp-content/uploads/2025/05/bg-banner-home-nmax-yamaha-mobile.webp);
 }
 
 #bg_main_img_01 {
@@ -19,13 +24,35 @@ body {
   position: absolute;
 }
 
-#nmax_banner_principal {
-  height: 55%;
-  width: 45%;
+#container_nmax_banner {
   position: absolute;
-  top: 48%;
+  top: 50%;
   left: 50%;
+  height: 80%;
   transform: translate(-50%, -50%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nmax_banner_principal {
+  width: 5%;
+  transition: transform 1s ease;
+  animation: expandir 1s ease forwards;
+  animation-delay: 0s;
+  display: block;
+}
+
+@keyframes expandir {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(20);
+    opacity: 1;
+  }
 }
 
 #header_section_01 {
@@ -125,21 +152,23 @@ body {
   align-items: center;
 }
 
-#actions_section_04 button {
+#actions_section_04 a {
   background-color: transparent;
-  font-family: "Play", sans-serif;
+  font-family: "Play", Sans-serif;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.5px;
   background-image: linear-gradient(285grad, #000000 0%, #ff0000 100%);
-  border-radius: 100px;
+  border-radius: 100px 100px 100px 100px;
   padding: 20px 40px 20px 40px;
+  transition: transform 0.3s ease;
+  z-index: 99;
+  text-decoration: none;
   color: #ffffff;
-  margin-top: 50px;
 }
 
-#actions_section_04 button:hover {
-  --e-transform-scale: 1.1;
+#actions_section_04 a:hover {
+  transform: scale(1.07); /* agranda el botón un 5% */
 }
 
 #section_02 {
@@ -309,14 +338,6 @@ body {
   overflow: hidden;
   word-wrap: break-word;
 }
-
-/* #bg_main_img_02 {
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  position: absolute;
-} */
-
 #header_section_03 {
   height: 20%;
   display: flex;
@@ -436,22 +457,25 @@ body {
 }
 
 #info_text_button {
-  margin-top: 60px;
-  a {
-    background-color: transparent;
-    font-family: "Play", sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    background-image: linear-gradient(285grad, #000000 0%, #ff0000 100%);
-    border-radius: 100px;
-    padding: 20px 40px;
-    box-shadow: none;
-    text-decoration: none;
-  }
-  a:hover {
-    --e-transform-scale: 1.1;
-  }
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#info_text_button a {
+  background-color: transparent;
+  font-family: "Play", Sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background-image: linear-gradient(285grad, #000000 0%, #ff0000 100%);
+  border-radius: 100px 100px 100px 100px;
+  padding: 20px 40px 20px 40px;
+  transition: transform 0.3s ease;
+}
+#info_text_button a:hover {
+  transform: scale(1.07) !important;
 }
 
 #section_04 {
@@ -565,8 +589,8 @@ body {
 }
 
 #container_moto_box_section_05 {
-  width: 70%;
-  height: 600px;
+  width: 80%;
+  height: 550px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -575,81 +599,248 @@ body {
 }
 
 .card {
+  width: 330px;
+  height: 500px;
   margin: 0 10px;
-  width: 200px;
-  height: 600px;
-  overflow: hidden;
-  position: relative;
-  width: 500px;
-  z-index: 1;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-/*   transition: box-shadow 0.4s ease, border 0.4s ease; */
   background-color: transparent;
-  background-image: linear-gradient(139grad, #FFFFFF00 0%, #FFFFFF26 100%);
-  /* transition: opacity 0.4s ease, transform 0.4s ease; */
-  /* transition: height 0.6s ease-in-out; */
-  transition: max-height 0.6s ease-in-out, padding 0.6s ease-in-out;
-}
-
-/* .card:hover::before{
-  opacity: 1;
-  transform: scale(1.02);
-  animation: borderGlow 3s linear infinite;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 1px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #00f0ff, #ff00c8, #00ff95);
-    background-size: auto;
-  background-size: 200% 200%;
-  animation: none;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: add, add;
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-} */
-
-.card img {
-  position: absolute;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  height: auto;
-  max-width: 100%;
+  background-image: linear-gradient(139grad, #ffffff00 0%, #ffffff26 100%);
+  border-radius: 8px;
+  overflow: hidden;
+  /* position: relative; */
+  transition: height 0.4s ease-in-out, padding 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  img {
+    /* position: absolute; */
+    width: 300px;
+    margin: 0 auto;
+    height: 300px;
+  }
 }
 
 .card:hover {
-  height: 700px;
-  transition: box-shadow 0.4s ease, border 0.4s ease;
+  height: 520px;
+  /* padding-bottom: 20px; */ /* espacio para el botón */
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2), 0 0 40px rgba(255, 0, 200, 0.15);
 }
 
-.boton {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+#name_moto_box {
+  padding: 0 20px;
+  font-family: "Poppins", Sans-serif;
+  *:nth-child(1) {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  *:nth-child(2) {
+    font-size: 13px;
+    font-weight: 400;
+    color: #ffffff;
+  }
+}
+
+#properties_moto_box {
+  margin-top: 20px;
+  padding: 0 20px;
+  font-family: "Poppins", Sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content_buttom {
+  margin-top: 20px;
+  transform: translateX(-0%) translateY(40px);
+  /* transform: translateX(-50%) translateY(10px); */
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card:hover .boton {
+.card:hover .content_buttom {
   opacity: 1;
+  /* transform: translateX(-50%) translateY(0); */
+  transform: translateX(-0%) translateY(10px);
 }
 
-/* .moto-box {
-  position: relative;
-  z-index: 1;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: box-shadow 0.4s ease, border 0.4s ease;
+.content_buttom a {
+  background-color: #d52b1e;
+  font-family: "Poppins", Sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 100px 100px 100px 100px;
+  padding: 20px 60px 20px 60px;
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0 auto;
 }
- */
+
+#section_06 {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+}
+
+#container_match_section_06 {
+  width: 80%;
+  margin: 0 auto;
+  height: 700px;
+}
+
+.img-compare-container {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  cursor: ew-resize;
+  border: 2px solid #ccc;
+}
+
+.img_section_06 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.left-img {
+  z-index: 1;
+}
+
+.right-img {
+  z-index: 2;
+  clip-path: inset(0 0 0 50%);
+}
+
+/* Línea divisoria */
+.divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background-color: #fff;
+  /*   border-left: 1px solid #000;
+  border-right: 1px solid #000; */
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Círculo en el centro */
+.handle {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  /* border: 2px solid black; */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 0%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+/* Icono <> */
+.icon {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 700;
+  position: absolute;
+  background-color: red;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+#section_07 {
+  margin: 0px;
+  padding: 0px;
+  height: 200px;
+  /* background-color: yellow; */
+  background-color: white;
+}
+
+#text_info_section_07 {
+  width: 70%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  *:nth-child(1) {
+    font-family: "Play", Sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #000000;
+  }
+  *:nth-child(2) {
+    text-align: center;
+    font-family: "Play", Sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    color: #000000;
+  }
+}
+
+#divider_section_07 {
+  transform: scaleX(-1);
+}
+#section_09 {
+  margin: 0px;
+  padding: 0;
+  height: 300px;
+  background-color: white;
+}
+
+#text_info_section_09 {
+  width: 70%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  *:nth-child(1) {
+    margin-top: 30px;
+    --container-widget-width: 88%;
+    --container-widget-flex-grow: 0;
+    text-align: center;
+    font-family: "Play", Sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.5px;
+    color: #000000;
+  }
+  *:nth-child(2) {
+    margin-top: 30px;
+    font-family: "Play", Sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #000000;
+  }
+}
+
+#divider_section_07 {
+  transform: scaleX(-1);
+}
+#divider_section_09 {
+  transform: scaleX(1);
+  background-color: white;
+}
