@@ -35,18 +35,33 @@ function escribir(i = 0) {
 
 escribir();
 
+const container = document.getElementById("container_match_section_06");
+const divider = document.getElementById("divider");
+const rightImg = container.querySelector(".right-img");
 
-const container = document.getElementById('container_match_section_06');
-  const divider = document.getElementById('divider');
-  const rightImg = container.querySelector('.right-img');
+container.addEventListener("mousemove", (e) => {
+  const rect = container.getBoundingClientRect();
+  const offsetX = e.clientX - rect.left;
 
-  container.addEventListener('mousemove', (e) => {
-    const rect = container.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left;
+  const clampedX = Math.max(0, Math.min(offsetX, rect.width));
 
-    const clampedX = Math.max(0, Math.min(offsetX, rect.width));
+  divider.style.left = clampedX + "px";
+  const percent = (clampedX / rect.width) * 100;
+  rightImg.style.clipPath = `inset(0 0 0 ${percent}%)`;
+});
 
-    divider.style.left = clampedX + 'px';
-    const percent = (clampedX / rect.width) * 100;
-    rightImg.style.clipPath = `inset(0 0 0 ${percent}%)`;
+const radios = document.querySelectorAll(
+  'input[type="radio"][name="acordeon"]'
+);
+let selected = null;
+
+radios.forEach((radio) => {
+  radio.addEventListener("click", function () {
+    if (this === selected) {
+      this.checked = false;
+      selected = null;
+    } else {
+      selected = this;
+    }
   });
+});
